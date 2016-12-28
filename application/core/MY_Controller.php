@@ -1,6 +1,9 @@
 <?php
 class MY_Controller extends CI_Controller
 {
+	protected $backend_folder = 'backend';
+  	protected $frontend_folder = 'frontend';
+	
 	public function __construct()
 	{
 		parent::__construct();
