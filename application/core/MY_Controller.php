@@ -37,7 +37,7 @@ class MY_Controller extends CI_Controller
 
 	public function view($view, $vars = array(), $return = FALSE, $layout = 'default')
 	{
-		$vars = array_merge($vars, $this->config_bootstrap);
+		$vars = array_merge($this->config_bootstrap, $vars);
 
 		if ($this->is_backend === TRUE)
 		{
@@ -52,6 +52,7 @@ class MY_Controller extends CI_Controller
 
 		$vars['top'] = $template.'/'.$folder.'/_partials/top';
 		$vars['left'] = $template.'/'.$folder.'/_partials/left';
+		$vars['messages'] = $template.'/'.$folder.'/_partials/messages';
 		$vars['view'] = $template.'/'.$folder.'/'.$view;
 		$vars['right'] = $template.'/'.$folder.'/_partials/right';
 		$vars['bottom'] = $template.'/'.$folder.'/_partials/bottom';
