@@ -28,14 +28,14 @@
             <li class="header">MAIN NAVIGATION</li>
             <li class="active treeview">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <i class="fa fa-user"></i> <span>Admin</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                    <li><a href="<?php echo site_url('backend/groups'); ?>"><i class="fa fa-circle-o"></i> Groups</a></li>
+                    <li><a href="<?php echo site_url('backend/users'); ?>"><i class="fa fa-circle-o"></i> Users</a></li>
                 </ul>
             </li>
             <li class="treeview" style="display: none;">
