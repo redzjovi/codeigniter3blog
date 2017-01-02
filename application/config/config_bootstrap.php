@@ -59,5 +59,7 @@ $config['config_bootstrap'] = array(
 	'debug' => array(
 		'profiler' => TRUE
 	),
+
+	'backend_login' => 'backend/admin',
 );
 ?>
