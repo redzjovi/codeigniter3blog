@@ -136,7 +136,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <a class="btn btn-default btn-flat" href="<?php echo site_url('backend/admin/logout'); ?>">Sign out</a> 
                             </div>
                         </li>
                     </ul>

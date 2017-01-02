@@ -2,22 +2,29 @@
     <div class="login-logo">
         <a href="../../index2.html"><b>Admin</b></a>
     </div>
+    <?php if (isset($message)) : ?>
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <?php echo $message; ?>
+        </div>
+    <?php endif; ?>
+    
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <form action="../../index2.html" method="post">
+        <?php echo form_open('', array('class' => 'form-group has-feedback')); ?>
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Email">
+                <input name="email" type="text" value="<?php echo set_value('email', 'admin@admin.com'); ?>" class="form-control" placeholder="email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password">
+                <input name="password" type="password" value="<?php echo set_value('password', 'password') ?>" class="form-control" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                     <label>
-                        <input name="remember_me" type="checkbox" value="1"> Remember Me
+                        <input <?php echo set_checkbox('remember_me', '1'); ?> name="remember_me" type="checkbox" value="1"> Remember Me
                     </label>
                   </div>
                 </div>
@@ -27,7 +34,7 @@
                 </div>
                 <!-- /.col -->
             </div>
-        </form>
+        <?php echo form_close(); ?>
     </div>
     <!-- /.login-box-body -->
 </div>
