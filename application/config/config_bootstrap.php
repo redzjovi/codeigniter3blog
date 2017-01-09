@@ -36,6 +36,48 @@ $config['config_bootstrap'] = array(
 	'template_backend' => 'adminlte',
 	'template_frontend' => 'adminlte',
 
+	'menu' => array(
+		'backend' => array(
+			'left' => array(
+				'1' => array(
+					'icon' => 'fa fa-clipboard',
+					'text' => 'Posts',
+					'url' => '#',
+					'children' => array(
+						'1' => array(
+							'icon' => 'fa fa-circle-o',
+							'text' => 'Posts',
+							'url' => 'backend/posts',
+						),
+						'2' => array(
+							'icon' => 'fa fa-circle-o',
+							'text' => 'Post Categories',
+							'url' => 'backend/post_categories',
+						),
+					),
+				),
+				'2' => array(
+					'icon' => 'fa fa-user',
+					'text' => 'Admin',
+					'url' => '#',
+					'children' => array(
+						'1' => array(
+							'icon' => 'fa fa-circle-o',
+							'text' => 'Groups',
+							'url' => 'backend/groups',
+						),
+						'2' => array(
+							'icon' => 'fa fa-circle-o',
+							'text' => 'Users',
+							'url' => 'backend/users',
+						),
+					),
+				),
+			),
+		),
+		'frontend' => array(),
+	),
+
 	// Email config
 	'email' => array(
 		'from_email' => '',
