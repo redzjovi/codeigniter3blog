@@ -1,23 +1,23 @@
 <?php
+$lang['menu_post'] = 'Posts';
+	$lang['menu_post_categories'] = 'Post categories';
+		$lang['menu_post_category_create'] = 'Create post category';
+		$lang['menu_post_category_update'] = 'Update post category';
 $lang['menu_admin'] = 'Admin';
-
-$lang['menu_groups'] = 'Groups';
-	$lang['menu_group_create'] = 'Create group';
-	$lang['menu_group_update'] = 'Update group';
-	$lang['group_create_success'] = 'Create group success';
-	$lang['group_update_success'] = 'Update group success';
-	$lang['group_delete_success'] = 'Delete group success';
-$lang['menu_users'] = 'Users';
-	$lang['menu_user_create'] = 'Create user';
-	$lang['menu_user_update'] = 'Update user';
-	$lang['user_create_success'] = 'Create user success';
-	$lang['user_update_success'] = 'Update user success';
-	$lang['user_delete_success'] = 'Delete user success';
+	$lang['menu_groups'] = 'Groups';
+		$lang['menu_group_create'] = 'Create group';
+		$lang['menu_group_update'] = 'Update group';
+	$lang['menu_users'] = 'Users';
+		$lang['menu_user_create'] = 'Create user';
+		$lang['menu_user_update'] = 'Update user';
 
 $lang['action'] = 'Action';
 $lang['back'] = 'Back';
 $lang['company'] = 'Company';
 $lang['create'] = 'Create';
+$lang['data_create_success'] = 'Data has been created';
+$lang['data_delete_success'] = 'Data has been deleted';
+$lang['data_update_success'] = 'Data has been updated';
 $lang['delete'] = 'Delete';
 $lang['delete_confirm'] = 'Are you sure to delete?';
 $lang['email'] = 'Email';
@@ -37,6 +37,7 @@ $lang['profile'] = 'Profile';
 $lang['remember_me'] = 'Remember me';
 $lang['sign_in'] = 'Sign in';
 $lang['sign_out'] = 'Sign out';
+$lang['slug'] = 'Slug';
 $lang['unique_with_param'] = '%s must be unique';
 $lang['update'] = 'Update';
 $lang['user_id'] = 'User id';

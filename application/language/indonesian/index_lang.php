@@ -1,23 +1,23 @@
 <?php
+$lang['menu_post'] = 'Posting';
+	$lang['menu_post_categories'] = 'Kategori posting';
+		$lang['menu_post_category_create'] = 'Tambah kategori posting';
+		$lang['menu_post_category_update'] = 'Ubah kategori posting';
 $lang['menu_admin'] = 'Admin';
-
-$lang['menu_groups'] = 'Kelompok';
-	$lang['menu_group_create'] = 'Tambah kelompok';
-	$lang['menu_group_update'] = 'Ubah kelompok';
-	$lang['group_create_success'] = 'Tambah kelompok berhasil';
-	$lang['group_update_success'] = 'Ubah kelompok berhasil';
-	$lang['group_delete_success'] = 'Hapus kelompok berhasil';
-$lang['menu_users'] = 'Pengguna';
-	$lang['menu_user_create'] = 'Tambah pengguna';
-	$lang['menu_user_update'] = 'Ubah pengguna';
-	$lang['user_create_success'] = 'Tambah pengguna berhasil';
-	$lang['user_update_success'] = 'Ubah pengguna berhasil';
-	$lang['user_delete_success'] = 'Hapus pengguna berhasil';
+	$lang['menu_groups'] = 'Kelompok';
+		$lang['menu_group_create'] = 'Tambah kelompok';
+		$lang['menu_group_update'] = 'Ubah kelompok';
+	$lang['menu_users'] = 'Pengguna';
+		$lang['menu_user_create'] = 'Tambah pengguna';
+		$lang['menu_user_update'] = 'Ubah pengguna';
 
 $lang['action'] = 'Aksi';
 $lang['back'] = 'Kembali';
 $lang['company'] = 'Perusahaan';
 $lang['create'] = 'Tambah';
+$lang['data_create_success'] = 'Data berhasil ditambah';
+$lang['data_delete_success'] = 'Data berhasil dihapus';
+$lang['data_update_success'] = 'Data berhasil diubah';
 $lang['delete'] = 'Hapus';
 $lang['delete_confirm'] = 'Apakah Anda yakin untuk menghapus?';
 $lang['email'] = 'Email';
@@ -37,6 +37,7 @@ $lang['profile'] = 'Profil';
 $lang['remember_me'] = 'Ingatkan saya';
 $lang['sign_in'] = 'Masuk';
 $lang['sign_out'] = 'Keluar';
+$lang['slug'] = 'Slug';
 $lang['unique_with_param'] = '%s harus unik';
 $lang['update'] = 'Ubah';
 $lang['user_id'] = 'Id user';

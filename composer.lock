@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6ddefe188698172c36187a118cb9eaec",
-    "content-hash": "9197d9c9deb8d96b5b8663254bdd1f3c",
+    "hash": "09006b3a36aafb54c847429dd94f0591",
+    "content-hash": "7f556967b5c8e16eb254b47ae0787543",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -171,6 +171,29 @@
             ],
             "description": "jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.",
             "time": "2016-09-16 05:47:55"
+        },
+        {
+            "name": "datatables/datatables",
+            "version": "1.10.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/DataTables.git",
+                "reference": "403128c42f7b263a0563e862decbe69734b834e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/DataTables/zipball/403128c42f7b263a0563e862decbe69734b834e8",
+                "reference": "403128c42f7b263a0563e862decbe69734b834e8",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table.",
+            "homepage": "http://www.datatables.net/",
+            "time": "2016-12-06 19:40:44"
         },
         {
             "name": "driftyco/ionicons",
