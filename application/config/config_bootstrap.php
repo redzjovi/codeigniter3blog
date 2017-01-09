@@ -41,17 +41,17 @@ $config['config_bootstrap'] = array(
 			'left' => array(
 				'1' => array(
 					'icon' => 'fa fa-user',
-					'text' => 'Admin',
+					'text' => 'menu_admin',
 					'url' => '#',
 					'children' => array(
 						'1' => array(
 							'icon' => 'fa fa-circle-o',
-							'text' => 'Groups',
+							'text' => 'menu_groups',
 							'url' => 'backend/groups',
 						),
 						'2' => array(
 							'icon' => 'fa fa-circle-o',
-							'text' => 'Users',
+							'text' => 'menu_users',
 							'url' => 'backend/users',
 						),
 					),
@@ -59,6 +59,20 @@ $config['config_bootstrap'] = array(
 			),
 		),
 		'frontend' => array(),
+	),
+
+	// Multilingual settings
+	'languages' => array(
+		'available'	=> array(
+			'1' => array(
+				'label'	=> 'English',
+				'value'	=> 'english',
+			),
+			'2' => array(
+				'label'	=> 'Indonesia',
+				'value'	=> 'indonesian',
+			),
+		),
 	),
 
 	// Email config

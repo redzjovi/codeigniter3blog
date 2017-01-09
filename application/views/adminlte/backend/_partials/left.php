@@ -59,7 +59,7 @@
             {
                 echo '<li>';
                 echo    '<a href="'.site_url($menu_row['url']).'">';
-                echo        '<i class="'.$menu_row['icon'].'"></i> <span>'.$menu_row['text'].'</span>';
+                echo        '<i class="'.$menu_row['icon'].'"></i> <span>'.lang($menu_row['text']).'</span>';
                 if (isset($menu_row['children']))
                 {
                     echo    '<span class="pull-right-container">';
@@ -75,7 +75,7 @@
                     {
                         echo '<li>';
                         echo    '<a href="'.site_url($menu_row_children['url']).'">';
-                        echo        '<i class="'.$menu_row_children['icon'].'"></i> <span>'.$menu_row_children['text'].'</span>';
+                        echo        '<i class="'.$menu_row_children['icon'].'"></i> <span>'.lang($menu_row_children['text']).'</span>';
                         echo    '</a>';
                         echo '</li>';
                     }

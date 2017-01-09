@@ -99,6 +99,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="dropdown notifications-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" >
+                        <i class="fa fa fa-globe"></i>
+        				<?php echo ucwords($this->session->userdata('site_language') ? $this->session->userdata('site_language') : $this->config->item('language')); ?>
+                        <i class="fa fa-caret-down"></i>
+        			</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <ul class="menu">
+                                <?php foreach ($languages['available'] as $language) : ?>
+                                    <li>
+                                        <a href="<?php echo site_url('language/switch_language/'.$language['value']); ?>"><?php echo $language['label']; ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -114,10 +132,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="#" class="btn btn-default btn-flat"><?php echo lang('profile'); ?></a>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-default btn-flat" href="<?php echo site_url('backend/admin/logout'); ?>">Sign out</a>
+                                <a class="btn btn-default btn-flat" href="<?php echo site_url('backend/admin/logout'); ?>"><?php echo lang('sign_out'); ?></a>
                             </div>
                         </li>
                     </ul>
