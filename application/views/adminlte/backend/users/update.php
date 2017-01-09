@@ -70,7 +70,7 @@
 		
 		<div class="box-footer">
 			<?php echo form_hidden('user_id', $user->id); ?>
-			<?php echo form_submit('submit', 'Create user', array('class' => 'btn btn-primary btn-xs')); ?>
+			<?php echo form_submit('submit', 'Update user', array('class' => 'btn btn-primary btn-xs')); ?>
 		</div>
 	<?php echo form_close(); ?>
 </div>

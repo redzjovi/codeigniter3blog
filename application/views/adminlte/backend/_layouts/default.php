@@ -13,10 +13,20 @@
 				<h1>
 					<?php echo $page_title; ?>
 				</h1>
-				<ol class="breadcrumb">
-					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-					<li class="active">Dashboard</li>
-				</ol>
+				<?php if (isset($breadcrumb)) : ?>
+					<ol class="breadcrumb">
+						<?php foreach ((array) $breadcrumb  as $value) : ?>
+		                    <li>
+		                        <i class="ace-icon fa <?php echo (isset($value['icon']) ? $value['icon'] : ''); ?>"></i>
+		                        <?php if (isset($value['url'])) : ?>
+		                            <a href="<?php echo (isset($value['url']) ? $value['url'] : ''); ?>"><?php echo $value['text']; ?></a>
+		                        <?php else : ?>
+		                            <?php echo $value['text']; ?>
+		                        <?php endif; ?>
+		                    </li>
+		                <?php endforeach; ?>
+					</ol>
+				<?php endif; ?>
 			</section>
 
 			<section class="content">

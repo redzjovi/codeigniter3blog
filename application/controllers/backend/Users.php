@@ -8,6 +8,10 @@ class Users extends Backend_Controller
 
 	public function index($group_id = NULL)
 	{
+		$vars['breadcrumb'] = array(
+			array('text' => 'Admin'),
+			array('text' => 'Users'),
+		);
 		$vars['page_title'] = 'Users';
 		$vars['users'] = $this->ion_auth->users($group_id)->result();
 		foreach ($vars['users'] as $k => $user)
@@ -19,6 +23,11 @@ class Users extends Backend_Controller
 
 	public function create()
 	{	
+		$vars['breadcrumb'] = array(
+			array('text' => 'Admin'),
+			array('text' => 'Users', 'url' => site_url('backend/users')),
+			array('text' => 'Create user'),
+		);
 		$vars['page_title'] = 'Create user';
 		
 		$this->form_validation->set_rules('first_name', 'First name', 'trim');
@@ -58,6 +67,11 @@ class Users extends Backend_Controller
 	public function update($user_id = NULL)
 	{
 		$user_id = $this->input->post('user_id') ? $this->input->post('user_id') : $user_id;
+		$vars['breadcrumb'] = array(
+			array('text' => 'Admin'),
+			array('text' => 'Users', 'url' => site_url('backend/users')),
+			array('text' => 'Update user'),
+		);
 		$vars['page_title'] = 'Edit user';
 		
 		$this->form_validation->set_rules('first_name', 'First name', 'trim');

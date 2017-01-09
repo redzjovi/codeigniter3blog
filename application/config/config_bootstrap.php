@@ -40,23 +40,6 @@ $config['config_bootstrap'] = array(
 		'backend' => array(
 			'left' => array(
 				'1' => array(
-					'icon' => 'fa fa-clipboard',
-					'text' => 'Posts',
-					'url' => '#',
-					'children' => array(
-						'1' => array(
-							'icon' => 'fa fa-circle-o',
-							'text' => 'Posts',
-							'url' => 'backend/posts',
-						),
-						'2' => array(
-							'icon' => 'fa fa-circle-o',
-							'text' => 'Post Categories',
-							'url' => 'backend/post_categories',
-						),
-					),
-				),
-				'2' => array(
 					'icon' => 'fa fa-user',
 					'text' => 'Admin',
 					'url' => '#',

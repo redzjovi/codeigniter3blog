@@ -26,10 +26,3 @@
 		<?php echo $this->session->flashdata('message_warning'); ?>
 	</div>
 <?php endif; ?>
-
-<?php if (validation_errors()) : ?>
-	<div class="alert alert-danger alert-dismissible no-margin">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<?php echo validation_errors(); ?>
-	</div>
-<?php endif; ?>

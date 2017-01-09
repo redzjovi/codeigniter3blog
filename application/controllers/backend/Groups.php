@@ -1,6 +1,6 @@
 <?php
 class Groups extends Backend_Controller
-{	
+{
 	public function __construct()
 	{
 		parent::__construct();
@@ -8,13 +8,22 @@ class Groups extends Backend_Controller
 
 	public function index()
 	{
-		$vars['page_title'] = 'Groups';
+		$vars['breadcrumb'] = array(
+			array('text' => 'Admin'),
+			array('text' => 'Groups'),
+		);
 		$vars['groups'] = $this->ion_auth->groups()->result();
+		$vars['page_title'] = 'Groups';
 		$this->view('groups/index', $vars);
 	}
 
 	public function create()
 	{
+		$vars['breadcrumb'] = array(
+			array('text' => 'Admin'),
+			array('text' => 'Groups', 'url' => site_url('backend/groups')),
+			array('text' => 'Create group'),
+		);
 		$vars['page_title'] = 'Create group';
 
 		$this->form_validation->set_rules('group_name', 'Group name','trim|required|is_unique[groups.name]');
@@ -37,6 +46,11 @@ class Groups extends Backend_Controller
 	public function update($group_id = NULL)
 	{
 		$group_id = $this->input->post('group_id') ? $this->input->post('group_id') : $group_id;
+		$vars['breadcrumb'] = array(
+			array('text' => 'Admin'),
+			array('text' => 'Groups', 'url' => site_url('backend/groups')),
+			array('text' => 'Update group'),
+		);
 		$vars['page_title'] = 'Update group';
 	
 		$this->form_validation->set_rules('group_name', 'Group name', 'trim|required|callback_check_unique_group_name');
