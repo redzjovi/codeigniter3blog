@@ -41,13 +41,18 @@ $config['config_bootstrap'] = array(
 			'left' => array(
 				'1' => array(
 					'icon' => 'fa fa-clipboard',
-					'text' => 'menu_post',
+					'text' => 'menu_posts',
 					'url' => '#',
 					'children' => array(
 						'1' => array(
 							'icon' => 'fa fa-circle-o',
 							'text' => 'menu_post_categories',
 							'url' => 'backend/post_categories',
+						),
+						'2' => array(
+							'icon' => 'fa fa-circle-o',
+							'text' => 'menu_posts',
+							'url' => 'backend/posts',
 						),
 					),
 				),
@@ -73,6 +78,9 @@ $config['config_bootstrap'] = array(
 		'frontend' => array(),
 	),
 
+	'datetime_php' => 'd-m-Y H:i',
+	'datetime_js' => 'DD-MM-YYYY HH:mm', // based on http://momentjs.com/docs/#/displaying/
+
 	// Multilingual settings
 	'languages' => array(
 		'available'	=> array(
@@ -85,6 +93,11 @@ $config['config_bootstrap'] = array(
 				'value'	=> 'indonesian',
 			),
 		),
+	),
+
+	'upload' => array(
+		'max_size' => 5000,
+		'posts_upload_path' => 'uploads/posts',
 	),
 
 	// Email config

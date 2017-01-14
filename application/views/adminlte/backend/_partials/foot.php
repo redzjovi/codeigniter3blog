@@ -11,9 +11,12 @@
     <script src="<?php echo base_url() ?>vendor/almasaeed2010/adminlte/dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url() ?>vendor/almasaeed2010/adminlte/dist/js/demo.js"></script>
-
+    <!-- bootstrap datepicker -->
+    <script src="<?php echo base_url(); ?>vendor/almasaeed2010/adminlte/plugins/datepicker/bootstrap-datepicker.js"></script>
     <!-- iCheck -->
     <script src="<?php echo base_url() ?>vendor/almasaeed2010/adminlte/plugins/iCheck/icheck.min.js"></script>
+    <script src="<?php echo base_url(); ?>vendor/moment/moment/min/moment.min.js"></script>
+    <script src="<?php echo base_url(); ?>vendor/eonasdan/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
     <script>
     $(function () {

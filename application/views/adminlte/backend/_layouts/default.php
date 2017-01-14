@@ -17,7 +17,7 @@
 					<ol class="breadcrumb">
 						<?php foreach ((array) $breadcrumb  as $value) : ?>
 		                    <li>
-		                        <i class="ace-icon fa <?php echo (isset($value['icon']) ? $value['icon'] : ''); ?>"></i>
+		                        <i class="<?php echo (isset($value['icon']) ? $value['icon'] : ''); ?>"></i>
 		                        <?php if (isset($value['url'])) : ?>
 		                            <a href="<?php echo (isset($value['url']) ? $value['url'] : ''); ?>"><?php echo $value['text']; ?></a>
 		                        <?php else : ?>
@@ -45,8 +45,8 @@
 
 	<?php if (ENVIRONMENT == 'development') : ?>
 		<p class="text-center text-muted">
-			CI Version: <strong><?php echo CI_VERSION; ?></strong>, 
-			Elapsed Time: <strong>{elapsed_time}</strong> seconds, 
+			CI Version: <strong><?php echo CI_VERSION; ?></strong>,
+			Elapsed Time: <strong>{elapsed_time}</strong> seconds,
 			Memory Usage: <strong>{memory_usage}</strong>
 		</p>
 	<?php endif; ?>

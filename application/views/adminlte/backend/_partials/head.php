@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>vendor/datatables/datatables/media/css/dataTables.bootstrap.min.css">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="<?php echo base_url() ?>vendor/fortawesome/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>vendor/eonasdan/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="<?php echo base_url() ?>vendor/driftyco/ionicons/css/ionicons.min.css">
 	<!-- Theme style -->

@@ -10,7 +10,7 @@ class Post_Categories extends Backend_Controller
 	function index()
 	{
 		$vars['breadcrumb'] = array(
-			array('text' => lang('menu_post')),
+			array('text' => lang('menu_posts')),
 			array('text' => lang('menu_post_categories')),
 		);
         $vars['page_title'] = lang('menu_post_categories');
@@ -21,7 +21,7 @@ class Post_Categories extends Backend_Controller
 	function create()
 	{
 		$vars['breadcrumb'] = array(
-			array('text' => lang('menu_post')),
+			array('text' => lang('menu_posts')),
 			array('text' => lang('menu_post_categories'), 'url' => site_url('backend/post_categories')),
 			array('text' => lang('menu_post_category_create')),
 		);
@@ -60,8 +60,8 @@ class Post_Categories extends Backend_Controller
 	{
 		$id = $this->input->post('id') ? $this->input->post('id') : $id;
 		$vars['breadcrumb'] = array(
-			array('text' => lang('menu_post')),
-			array('text' => lang('menu_'), 'url' => site_url('backend/groups')),
+			array('text' => lang('menu_posts')),
+			array('text' => lang('menu_post_categories'), 'url' => site_url('backend/groups')),
 			array('text' => lang('menu_group_update')),
 		);
 		$vars['page_title'] = lang('menu_group_update');
