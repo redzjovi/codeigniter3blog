@@ -1,6 +1,6 @@
 <?php
 class Groups extends Backend_Controller
-{	
+{
 	public function __construct()
 	{
 		parent::__construct();
@@ -8,17 +8,26 @@ class Groups extends Backend_Controller
 
 	public function index()
 	{
-		$vars['page_title'] = 'Groups';
+		$vars['breadcrumb'] = array(
+			array('text' => lang('menu_admin')),
+			array('text' => lang('menu_groups')),
+		);
 		$vars['groups'] = $this->ion_auth->groups()->result();
+		$vars['page_title'] = lang('menu_groups');
 		$this->view('groups/index', $vars);
 	}
 
 	public function create()
 	{
-		$vars['page_title'] = 'Create group';
+		$vars['breadcrumb'] = array(
+			array('text' => lang('menu_admin')),
+			array('text' => lang('menu_groups'), 'url' => site_url('backend/groups')),
+			array('text' => lang('menu_group_create')),
+		);
+		$vars['page_title'] = lang('menu_group_create');
 
-		$this->form_validation->set_rules('group_name', 'Group name','trim|required|is_unique[groups.name]');
-		$this->form_validation->set_rules('group_description','Group description','trim|required');
+		$this->form_validation->set_rules('group_name', lang('group_name'), 'trim|required|is_unique[groups.name]');
+		$this->form_validation->set_rules('group_description', lang('group_description'), 'trim|required');
 
 		if ($this->form_validation->run() === FALSE)
 		{
@@ -37,11 +46,16 @@ class Groups extends Backend_Controller
 	public function update($group_id = NULL)
 	{
 		$group_id = $this->input->post('group_id') ? $this->input->post('group_id') : $group_id;
-		$vars['page_title'] = 'Update group';
-	
-		$this->form_validation->set_rules('group_name', 'Group name', 'trim|required|callback_check_unique_group_name');
-		$this->form_validation->set_rules('group_description', 'Group description', 'trim|required');
-		$this->form_validation->set_rules('group_id', 'Group id', 'trim|integer|required');
+		$vars['breadcrumb'] = array(
+			array('text' => lang('menu_admin')),
+			array('text' => lang('menu_groups'), 'url' => site_url('backend/groups')),
+			array('text' => lang('menu_group_update')),
+		);
+		$vars['page_title'] = lang('menu_group_update');
+
+		$this->form_validation->set_rules('group_name', lang('group_name'), 'trim|required|callback_check_unique_group_name');
+		$this->form_validation->set_rules('group_description', lang('group_description'), 'trim|required');
+		$this->form_validation->set_rules('group_id', lang('group_id'), 'trim|integer|required');
 
 		if ($this->form_validation->run() === FALSE)
 		{
@@ -90,7 +104,10 @@ class Groups extends Backend_Controller
 		}
 		else
 		{
-			$this->form_validation->set_message('check_unique_group_name', '%s must be unique');
+			$this->form_validation->set_message(
+				'check_unique_group_name',
+				sprintf(lang('unique_with_param'), lang('group_name'))
+			);
 			$response = false;
 		}
 		return $response;

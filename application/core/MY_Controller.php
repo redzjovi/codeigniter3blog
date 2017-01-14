@@ -5,7 +5,7 @@ class MY_Controller extends CI_Controller
 	protected $backend_folder = 'backend';
 	protected $frontend_folder = 'frontend';
 	protected $config_bootstrap = array();
-	
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -38,16 +38,20 @@ class MY_Controller extends CI_Controller
 	public function view($view, $vars = array(), $return = FALSE, $layout = 'default')
 	{
 		$vars = array_merge($this->config_bootstrap, $vars);
+		$vars['ion_auth_user'] = $this->ion_auth->user()->row();
+		$vars['user_group'] = $this->ion_auth->get_users_groups()->result();
 
 		if ($this->is_backend === TRUE)
 		{
 			$template = $this->config_bootstrap['template_backend'];
 			$folder = $this->backend_folder;
+			$vars['menu'] = $this->config_bootstrap['menu']['backend'];
 		}
 		else
 		{
 			$template = $this->config_bootstrap['template_frontend'];
 			$folder = $this->frontend_folder;
+			$vars['menu'] = $this->config_bootstrap['menu']['frontend'];
 		}
 
 		$vars['top'] = $template.'/'.$folder.'/_partials/top';

@@ -13,10 +13,20 @@
 				<h1>
 					<?php echo $page_title; ?>
 				</h1>
-				<ol class="breadcrumb">
-					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-					<li class="active">Dashboard</li>
-				</ol>
+				<?php if (isset($breadcrumb)) : ?>
+					<ol class="breadcrumb">
+						<?php foreach ((array) $breadcrumb  as $value) : ?>
+		                    <li>
+		                        <i class="<?php echo (isset($value['icon']) ? $value['icon'] : ''); ?>"></i>
+		                        <?php if (isset($value['url'])) : ?>
+		                            <a href="<?php echo (isset($value['url']) ? $value['url'] : ''); ?>"><?php echo $value['text']; ?></a>
+		                        <?php else : ?>
+		                            <?php echo $value['text']; ?>
+		                        <?php endif; ?>
+		                    </li>
+		                <?php endforeach; ?>
+					</ol>
+				<?php endif; ?>
 			</section>
 
 			<section class="content">
@@ -35,8 +45,8 @@
 
 	<?php if (ENVIRONMENT == 'development') : ?>
 		<p class="text-center text-muted">
-			CI Version: <strong><?php echo CI_VERSION; ?></strong>, 
-			Elapsed Time: <strong>{elapsed_time}</strong> seconds, 
+			CI Version: <strong><?php echo CI_VERSION; ?></strong>,
+			Elapsed Time: <strong>{elapsed_time}</strong> seconds,
 			Memory Usage: <strong>{memory_usage}</strong>
 		</p>
 	<?php endif; ?>

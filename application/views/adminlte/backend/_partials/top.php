@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?php echo site_url('backend/dashboard'); ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -99,44 +99,43 @@
                         </li>
                     </ul>
                 </li>
+                <li class="dropdown notifications-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" >
+                        <i class="fa fa fa-globe"></i>
+        				<?php echo ucwords($this->session->userdata('site_language') ? $this->session->userdata('site_language') : $this->config->item('language')); ?>
+                        <i class="fa fa-caret-down"></i>
+        			</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <ul class="menu">
+                                <?php foreach ($languages['available'] as $language) : ?>
+                                    <li>
+                                        <a href="<?php echo site_url('language/switch_language/'.$language['value']); ?>"><?php echo $language['label']; ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?php echo base_url() ?>/vendor/almasaeed2010/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs"><?php echo $ion_auth_user->first_name.' '.$ion_auth_user->last_name; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
                             <img src="<?php echo base_url() ?>/vendor/almasaeed2010/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                            <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
-                            </p>
-                        </li>
-                        <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Followers</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Sales</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Friends</a>
-                                </div>
-                            </div>
-                            <!-- /.row -->
+                            <p><?php echo $ion_auth_user->first_name.' '.$ion_auth_user->last_name; ?></p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="#" class="btn btn-default btn-flat"><?php echo lang('profile'); ?></a>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-default btn-flat" href="<?php echo site_url('backend/admin/logout'); ?>">Sign out</a> 
+                                <a class="btn btn-default btn-flat" href="<?php echo site_url('backend/admin/logout'); ?>"><?php echo lang('sign_out'); ?></a>
                             </div>
                         </li>
                     </ul>

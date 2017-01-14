@@ -8,41 +8,17 @@
                 <img src="<?php echo base_url() ?>/vendor/almasaeed2010/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p><?php echo $ion_auth_user->first_name.' '.$ion_auth_user->last_name; ?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
-        <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview">
-                <a href="#">
-                    <i class="fa fa-user"></i> <span>Admin</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="<?php echo site_url('backend/groups'); ?>"><i class="fa fa-circle-o"></i> Groups</a></li>
-                    <li><a href="<?php echo site_url('backend/users'); ?>"><i class="fa fa-circle-o"></i> Users</a></li>
-                </ul>
-            </li>
             <li class="treeview" style="display: none;">
                 <a href="#">
                     <i class="fa fa-share"></i> <span>Multilevel</span>
                     <span class="pull-right-container">
-
                         <i class="fa fa-angle-left pull-right"></i>
                         <small class="label pull-right bg-yellow">12</small>
                     </span>
@@ -50,7 +26,8 @@
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                     <li>
-                        <a href="#"><i class="fa fa-circle-o"></i> Level One
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i> Level One
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
@@ -58,7 +35,8 @@
                         <ul class="treeview-menu">
                             <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> Level Two
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i> Level Two
                                     <span class="pull-right-container">
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </span>
@@ -75,6 +53,38 @@
             </li>
             <li class="header" style="display: none;">LABELS</li>
             <li style="display: none;"><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+
+            <?php
+            foreach ((array) $menu['left'] as $menu_row)
+            {
+                echo '<li>';
+                echo    '<a href="'.site_url($menu_row['url']).'">';
+                echo        '<i class="'.$menu_row['icon'].'"></i> <span>'.lang($menu_row['text']).'</span>';
+                if (isset($menu_row['children']))
+                {
+                    echo    '<span class="pull-right-container">';
+                    echo        '<i class="fa fa-angle-left pull-right"></i>';
+                    echo    '</span>';
+                }
+                echo    '</a>';
+
+                if (isset($menu_row['children']))
+                {
+                    echo '<ul class="treeview-menu">';
+                    foreach ((array) $menu_row['children'] as $menu_row_children)
+                    {
+                        echo '<li>';
+                        echo    '<a href="'.site_url($menu_row_children['url']).'">';
+                        echo        '<i class="'.$menu_row_children['icon'].'"></i> <span>'.lang($menu_row_children['text']).'</span>';
+                        echo    '</a>';
+                        echo '</li>';
+                    }
+                    echo '</ul>';
+                }
+
+                echo '</li>';
+            }
+            ?>
         </ul>
     </section>
     <!-- /.sidebar -->

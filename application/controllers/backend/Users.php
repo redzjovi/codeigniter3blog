@@ -8,7 +8,11 @@ class Users extends Backend_Controller
 
 	public function index($group_id = NULL)
 	{
-		$vars['page_title'] = 'Users';
+		$vars['breadcrumb'] = array(
+			array('text' => lang('menu_admin')),
+			array('text' => lang('menu_users')),
+		);
+		$vars['page_title'] = lang('menu_users');
 		$vars['users'] = $this->ion_auth->users($group_id)->result();
 		foreach ($vars['users'] as $k => $user)
 		{
@@ -19,18 +23,23 @@ class Users extends Backend_Controller
 
 	public function create()
 	{	
-		$vars['page_title'] = 'Create user';
-		
-		$this->form_validation->set_rules('first_name', 'First name', 'trim');
-		$this->form_validation->set_rules('last_name', 'Last name', 'trim');
-		$this->form_validation->set_rules('company', 'Company', 'trim');
-		$this->form_validation->set_rules('phone', 'Phone', 'trim');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[users.username]');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		$this->form_validation->set_rules('password_confirm', 'Password confirmation', 'required|matches[password]');
-		$this->form_validation->set_rules('groups[]', 'Groups', 'required|integer');
-	 
+		$vars['breadcrumb'] = array(
+			array('text' => lang('menu_admin')),
+			array('text' => lang('menu_users'), 'url' => site_url('backend/users')),
+			array('text' => lang('menu_user_create')),
+		);
+		$vars['page_title'] = lang('menu_user_create');
+
+		$this->form_validation->set_rules('first_name', lang('first_name'), 'trim');
+		$this->form_validation->set_rules('last_name', lang('last_name'), 'trim');
+		$this->form_validation->set_rules('company', lang('company'), 'trim');
+		$this->form_validation->set_rules('phone', lang('phone'), 'trim');
+		$this->form_validation->set_rules('username', lang('username'), 'trim|required|is_unique[users.username]');
+		$this->form_validation->set_rules('email', lang('email'), 'trim|required|valid_email|is_unique[users.email]');
+		$this->form_validation->set_rules('password', lang('password'), 'required');
+		$this->form_validation->set_rules('password_confirm', lang('password_confirm'), 'required|matches[password]');
+		$this->form_validation->set_rules('groups[]', lang('groups'), 'required|integer');
+
 		if ($this->form_validation->run() === FALSE)
 		{
 			$vars['groups'] = $this->ion_auth->groups()->result();
@@ -58,19 +67,24 @@ class Users extends Backend_Controller
 	public function update($user_id = NULL)
 	{
 		$user_id = $this->input->post('user_id') ? $this->input->post('user_id') : $user_id;
-		$vars['page_title'] = 'Edit user';
-		
-		$this->form_validation->set_rules('first_name', 'First name', 'trim');
-		$this->form_validation->set_rules('last_name', 'Last name', 'trim');
-		$this->form_validation->set_rules('company', 'Company', 'trim');
-		$this->form_validation->set_rules('phone', 'Phone', 'trim');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('password', 'Password', 'min_length[6]');
-		$this->form_validation->set_rules('password_confirm', 'Password confirmation', 'matches[password]');
-		$this->form_validation->set_rules('groups[]', 'Groups', 'required|integer');
-		$this->form_validation->set_rules('user_id', 'User ID', 'trim|integer|required');
-	 
+		$vars['breadcrumb'] = array(
+			array('text' => lang('menu_admin')),
+			array('text' => lang('menu_users'), 'url' => site_url('backend/users')),
+			array('text' => lang('menu_user_update')),
+		);
+		$vars['page_title'] = lang('menu_user_update');
+
+		$this->form_validation->set_rules('first_name', lang('first_name'), 'trim');
+		$this->form_validation->set_rules('last_name', lang('last_name'), 'trim');
+		$this->form_validation->set_rules('company', lang('company'), 'trim');
+		$this->form_validation->set_rules('phone', lang('phone'), 'trim');
+		$this->form_validation->set_rules('username', lang('username'), 'trim|required');
+		$this->form_validation->set_rules('email', lang('email'), 'trim|required|valid_email');
+		$this->form_validation->set_rules('password', lang('password'), 'min_length[6]');
+		$this->form_validation->set_rules('password_confirm', lang('password_confirm'), 'matches[password]');
+		$this->form_validation->set_rules('groups[]', lang('groups'), 'required|integer');
+		$this->form_validation->set_rules('user_id', lang('user_id'), 'trim|integer|required');
+
 		if ($this->form_validation->run() === FALSE)
 		{
 			if ($user = $this->ion_auth->user((int) $user_id)->row())
