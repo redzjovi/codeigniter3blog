@@ -24,6 +24,22 @@ class Posts_Model extends CI_Model
         return $this->db->get('posts')->row();
     }
 
+    function read_by_slug($id)
+    {
+        $this->db->select('posts.*');
+        $this->db->select('users.first_name');
+        $this->db->from('posts');
+        $this->db->join('users', 'users.id = posts.author', 'left');
+        $this->db->where('slug', $id);
+        return $this->db->get()->row();
+    }
+
+    function read_order_by($field, $direction = 'ASC')
+    {
+        $this->db->order_by($field, $direction);
+        return $this->db->get('posts');
+    }
+
     function update($id, $data)
     {
         $this->db->where('id', $id);

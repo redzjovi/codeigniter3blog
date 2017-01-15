@@ -34,7 +34,7 @@ $config['config_bootstrap'] = array(
 
 	// Default template
 	'template_backend' => 'adminlte',
-	'template_frontend' => 'adminlte',
+	'template_frontend' => 'amp',
 
 	'menu' => array(
 		'backend' => array(

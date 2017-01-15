@@ -17,8 +17,7 @@
 		"driftyco/ionicons": "^2.0",
 		"components/jqueryui": "^1.12",
 		"datatables/datatables": "^1.10",
-		"eonasdan/bootstrap-datetimepicker": "^4.17",
-		"enyo/dropzone": "^4.3"
+		"eonasdan/bootstrap-datetimepicker": "^4.17"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
