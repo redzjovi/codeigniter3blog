@@ -1,5 +1,5 @@
 <?php
-class Post_Categories extends Backend_Controller
+class Post_categories extends Backend_Controller
 {
 	function __construct()
 	{

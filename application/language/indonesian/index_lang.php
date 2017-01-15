@@ -35,6 +35,7 @@ $lang['group_id'] = 'Id kelompok';
 $lang['group_name'] = 'Nama kelompok';
 $lang['group_description'] = 'Deskripsi kelompok';
 $lang['groups'] = 'Kelompok';
+$lang['home'] = 'Depan';
 $lang['id'] = 'Id';
 $lang['image'] = 'Gambar';
 $lang['inactive'] = 'Tidak aktif';

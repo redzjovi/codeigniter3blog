@@ -1,4 +1,8 @@
 <body>
+	<?php $this->load->view($top); ?>
+
+	<?php $this->load->view($left); ?>
+
 	<?php $this->load->view($view); ?>
 
 	<?php if (ENVIRONMENT == 'development') : ?>

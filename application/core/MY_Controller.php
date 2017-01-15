@@ -16,6 +16,7 @@ class MY_Controller extends CI_Controller
 	protected function _setup()
 	{
 		$this->config_bootstrap = $this->config->item('config_bootstrap');
+		$this->load->model('Post_Categories_Model');
 	}
 
 	protected function set_backend($value = FALSE)
@@ -39,6 +40,7 @@ class MY_Controller extends CI_Controller
 	{
 		$vars = array_merge($this->config_bootstrap, $vars);
 		$vars['ion_auth_user'] = $this->ion_auth->user()->row();
+		$vars['left_menu'] = $this->Post_Categories_Model->read();
 		$vars['user_group'] = $this->ion_auth->get_users_groups()->result();
 
 		if ($this->is_backend === TRUE)

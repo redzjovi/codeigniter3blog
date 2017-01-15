@@ -35,6 +35,7 @@ $lang['group_id'] = 'Group id';
 $lang['group_name'] = 'Group name';
 $lang['group_description'] = 'Group description';
 $lang['groups'] = 'Groups';
+$lang['home'] = 'Home';
 $lang['id'] = 'Id';
 $lang['image'] = 'Image';
 $lang['inactive'] = 'Inactive';

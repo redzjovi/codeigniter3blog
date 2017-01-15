@@ -4,17 +4,38 @@
 </p>
 
 <p class="heading">
-    <amp-social-share type="twitter" width="45" height="33"></amp-social-share>
-    <amp-social-share type="facebook" width="45" height="33" data-attribution=254325784911610></amp-social-share>
-    <amp-social-share type="gplus" width="45" height="33"></amp-social-share>
-    <amp-social-share type="email" width="45" height="33"></amp-social-share>
-    <amp-social-share type="pinterest" width="45" height="33"></amp-social-share>
+    <amp-social-share type="email"></amp-social-share>
+    <amp-social-share type="facebook"></amp-social-share>
+    <amp-social-share type="gplus"></amp-social-share>
+    <amp-social-share type="linkedin"></amp-social-share>
+    <amp-social-share type="pinterest"></amp-social-share>
+    <amp-social-share type="tumblr"></amp-social-share>
+    <amp-social-share type="twitter"></amp-social-share>
+    <!-- <amp-social-share type="whatsapp"></amp-social-share> -->
 </p>
 
+<amp-image-lightbox id="lightbox1" layout="nodisplay"></amp-image-lightbox>
+
 <figure>
-    <amp-img src="<?php echo base_url($post->image ? $upload['posts_upload_path'].'/'.$post->image : 'uploads/default/no-image.png'); ?>" layout="responsive" width="1280" height="768"></amp-img>
+    <amp-img src="<?php echo base_url($post->image ? $upload['posts_upload_path'].'/'.$post->image : 'uploads/default/no-image.png'); ?>"
+        layout="responsive"
+        on="tap:lightbox1"
+        width="1280"
+        height="768">
+    </amp-img>
 </figure>
 <p><?php echo $post->content; ?></p>
+
+<p class="heading">
+    <amp-social-share type="email"></amp-social-share>
+    <amp-social-share type="facebook"></amp-social-share>
+    <amp-social-share type="gplus"></amp-social-share>
+    <amp-social-share type="linkedin"></amp-social-share>
+    <amp-social-share type="pinterest"></amp-social-share>
+    <amp-social-share type="tumblr"></amp-social-share>
+    <amp-social-share type="twitter"></amp-social-share>
+    <!-- <amp-social-share type="whatsapp"></amp-social-share> -->
+</p>
 
 <h4><?php echo lang('recent_articles'); ?></h4>
 <amp-list width=300 height=75 layout=responsive>
@@ -25,7 +46,7 @@
             <span><?php echo $row->title; ?></span>
         </a>
         <?php $number++;
-            if ($number == 3) break;
+        if ($number == 3) break;
         ?>
     <?php endforeach; ?>
 </amp-list>
